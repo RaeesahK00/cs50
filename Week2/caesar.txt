@@ -1,0 +1,6 @@
+The program must run with just one command-line argument
+Make sure every character in the command-line argument is a digit
+Change the argument from a string to an int
+Prompt user to enter plaintext
+For each character in the plaintext rotate the plaintext by the key value
+Display the ciphertext for the rotated plaintext

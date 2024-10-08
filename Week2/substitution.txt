@@ -1,0 +1,6 @@
+Get the key from the user through the command-line argument
+The key should be validated, it should be 26 characters long and each character should be unique and alphabetic
+Prompt the user to enter plaintext
+For each character in the plaintext, find its corresponding character in the key and replace it
+Each alphabetical character in the plaintext substituted for the corresponding character in the ciphertext,non-alphabetical characters should be outputted unchanged
+Print the resulting ciphertext

@@ -1,0 +1,4 @@
+Check for the correct usage of comand-line arguments
+Read the csv file containing the DNA and the text file containing the sequences
+Calculate the longest match
+Print either the name of the persons profile or no match if no profile matches

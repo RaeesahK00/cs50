@@ -1,0 +1,7 @@
+Display "Change owned: "
+check if the change entered is more than zero then break out of loop,otherwise keep reprompting user
+convert change entered by user to cents by *100 and then convert it to an integer
+loop through the length of the list of coins checking each one
+get the amount of coins from the change then add it to the counter,using integer division
+calculate what is left of the change and update the change variable
+print and display the coins count

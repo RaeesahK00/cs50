@@ -1,0 +1,3 @@
+Prompt the user to enter two words by displaying "Player 1: " and then "Player 2: "
+Calculate the score of each word based on the numbers given
+Print the winner

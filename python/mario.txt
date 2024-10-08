@@ -1,0 +1,2 @@
+Prompt the user to enter a height between 1 and 8
+Print out the height of the pyramid according to the height entered right aligned

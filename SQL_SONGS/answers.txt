@@ -1,0 +1,4 @@
+I would characterize their audio aura as purple (which represents a listener that tunes in to get amped up, entertained, and moving ) and orange(which represents their need for high-energy, confidence-boosting sounds) as most of the songs energy is above 0.7.
+As supposed in the specification Spotify determines an audio aura by looking at the average energy, valence, and danceability of a person’s top 100 songs from the past year, that is just basing the aura on all the songs.
+I think that it should be based on the top 10 only as they are the most listened through the year ,which would give a more specific aura audio.
+I would suggested they find the average of energy, valence, and danceability of their top 10 songs.

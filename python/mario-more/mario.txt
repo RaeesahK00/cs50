@@ -1,0 +1,2 @@
+Prompt the user to enter a height between 1 and 8
+Display/Print the pyramid of hashes right aligned with two spaces in the middle and a left aligned pyrimid

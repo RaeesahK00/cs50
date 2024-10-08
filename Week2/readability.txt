@@ -1,0 +1,4 @@
+Prompt the user for text
+Count the number of letters, words and sentences
+Calculate the index using the Coleman-Liau
+Print the grade level
