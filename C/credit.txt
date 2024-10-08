@@ -1,0 +1,7 @@
+Display "Number: "
+Input the number and store in variable digitLength
+Get the first two digits and store in variable num
+Check if num is a valid card number using the checksum function print invalid if not
+Check if the first two digits are equal to the conditions of the different card types
+If not print invalid, if they are equal check the length using length function
+Print card name if the length is equal to the condition else print invalid

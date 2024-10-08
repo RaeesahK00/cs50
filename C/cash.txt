@@ -1,0 +1,5 @@
+Display "Change owned: "
+loop through the array checking each index
+get the amount of coins from the change then add it to the counter
+calculate what is left of the change and update the change variable
+print and display the amount of coins

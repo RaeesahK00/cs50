@@ -1,0 +1,2 @@
+Prompt the user for a height greater than zero
+Display the pyramid of hashes right aligned
