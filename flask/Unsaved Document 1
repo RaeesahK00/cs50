@@ -1,0 +1,115 @@
+@app.route("/sell", methods=["GET", "POST"])
+@login_required
+def sell():
+    """Sell shares of stock"""
+    user_id = session["user_id"]
+
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+       
+        # Validate the inputs
+        if not symbol:
+            return apology("Please select a stock to sell", 400)
+        if not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Please enter a valid number of shares", 400)
+       
+        # Get total shares owned by the user
+        total_shares = db.execute("SELECT SUM(shares) AS total_shares FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)[0]["total_shares"]
+       
+        if total_shares is None or int(shares) > total_shares:
+            return apology("You do not own that many shares", 403)
+
+        # Get current stock price
+        stock = lookup(symbol)
+        if not stock:
+            return apology("Invalid stock symbol", 400)
+
+        sale_value = stock["price"] * int(shares)
+       
+        # Update the database (remove or update shares)
+        new_shares = total_shares - int(shares)
+        if new_shares == 0:
+            db.execute("DELETE FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+        else:
+            db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?", new_shares, user_id, symbol)
+
+        # Update user's cash balance
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        new_cash = cash + sale_value
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+
+        # Render the success page
+        return render_template("/sold.html", new_cash=new_cash)
+   
+    else:
+        # Show available stocks to sell
+        rows = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
+        return render_template("sell.html", rows=rows)
+======================================MY ONE----=========
+# @app.route("/sell", methods=["GET", "POST"])
+# @login_required
+# def sell():
+#     """Sell shares of stock"""
+#     user_id = session["user_id"][0]["id"]
+
+#     if request.method == "POST":
+#         symbol = request.form.get("symbol")
+#         shares = request.form.get("shares")
+#         transactions= db.execute("SELECT * FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+
+#         if not symbol:
+#             return apology("Please select a stock to sell",400)
+#         elif not shares:
+#             return apology("Please enter shares",400)
+#         elif not shares.isdigit():
+#             return apology("Please enter an integer number of shares",400)
+
+
+#         for transaction in transactions:
+#             if int(shares) > transaction['shares']:
+#                 return apology("You do not own that much shares", 403)
+
+#         new_shares = transaction['shares'] - int(shares)
+
+#         if new_shares == 0:
+#             db.execute("DELETE FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+#         else:
+#             db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?", new_shares, user_id, symbol)
+
+#             cash = db.execute("SELECT cash FROM users WHERE id = ?",user_id)
+#             new_cash = cash[0]['cash'] + int(shares) * transactions[0]['price']
+#             db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+
+#             transactions = db.execute("SELECT transactions.*, users.* FROM transactions JOIN users ON transactions.user_id = users.id WHERE transactions.user_id = ?;", user_id)
+#             total_value = 0
+#             for transaction in transactions:
+#                 total_value += transaction['shares'] * transaction['price']
+
+#             total_value += cash
+
+
+
+#         return render_template("/sold.html", transactions=transactions, cash_buy_left=cash_buy_left, total_value=total_value)
+#     else:
+#         rows= db.execute("SELECT symbol FROM transactions WHERE user_id = ?", user_id)
+#         return render_template("/sell.html",rows=rows)
+===============
+
+            existing_shares = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+
+            if existing_shares:
+                new_shares = existing_shares[0]['shares'] + int(shares)
+                db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?", new_shares, user_id, symbol)
+            else:
+                db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, symbol, shares, price, date)
+==============
+
+        if new_shares == 0:
+            db.execute("DELETE FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+        else:
+            transaction_type = "Sold"
+            db.execute("INSERT INTO transactions (user_id, symbol, shares, price,transaction_type, date) VALUES (?, ?, ?, ?, ?, ?)", user_id, symbol, shares, shares_price,transaction_type, date)
+
+
+

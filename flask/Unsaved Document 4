@@ -1,0 +1,18 @@
+            # db.execute("UPDATE transactions SET shares = ?, price = ?, date = ? WHERE user_id = ? AND symbol = ?", new_shares, new_price, new_transaction_type, new_date, user_id, symbol)
+
+            # db.execute("INSERT INTO transactions (user_id, symbol, shares, price,transaction_type, date) VALUES (?, ?, ?, ?, ?, ?)", user_id, symbol, shares, price,"Bought", date)
+            # db.execute("INSERT INTO history(user_id, symbol, shares, amount,transaction_type, date) VALUES (?, ?,  ?, ?, ?, ?)",user_id, symbol, shares, shares_amount,"Bought", date)
+
+
+            # transactions = db.execute("SELECT transactions.*, users.* FROM transactions JOIN users ON transactions.user_id = users.id WHERE transactions.user_id = ? AND transaction_type = ? GROUP BY symbol", user_id, "Bought")
+            # print(transactions)
+            # total_value = 0
+            # for transaction in transactions:
+            #     total_value += transaction['shares'] * transaction['price']
+
+            # total_value += round(cash)
+
+
+
+            # return render_template("/portfolio.html", transactions=transactions, cash_value_left=cash_value_left, total_value=total_value)
+                # Check if a transaction for this symbol already exists

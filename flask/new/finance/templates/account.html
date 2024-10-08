@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <h1>Update Password</h1>
+    <form action="/account" method="post">
+
+        <div class="mb-3">
+            <p>Username</p>
+           <input id = "username" autocomplete="off"  disabled class="form-control mx-auto w-auto" name="username" value="{{ username }}" type="text">
+        </div>
+        <div class="mb-3">
+            <p>Enter old password</p><input autocomplete="off" class="form-control mx-auto w-auto" autofocus name="old_password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <p>Enter new Password</p><input autocomplete="off" class="form-control mx-auto w-auto" autofocus name="password" placeholder="New Password" type="password">
+        </div>
+        <div class="mb-3">
+            <p>Confirm Password</p><input autocomplete="off" class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm New Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Update password</button>
+    </form>
+
+{% endblock %}

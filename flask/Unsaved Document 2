@@ -1,0 +1,36 @@
+  # transactions_shares = db.execute("SELECT *,SUM(shares) as total_shares FROM transactions WHERE user_id = ? AND symbol = ? AND transaction_type = ?", user_id, symbol,"Bought")
+        # total_shares = transactions_shares[0]['total_shares']
+        # print("total sahres" , total_shares)
+        # shares_price = lookup(symbol)["price"]
+        # # shares_data = "-" + str(transactions_shares[0]['total_shares'])
+
+        # if int(shares) > total_shares:
+        #     print("transactions shares + price",total_shares,shares_price)
+        #     return apology("You do not own that much shares", 403)
+
+
+        # new_shares = total_shares - int(shares)
+        # print("new shares",new_shares)
+
+        # # if new_shares == 0:
+        # #     db.execute("DELETE FROM transactions WHERE user_id = ? AND symbol = ?", user_id, symbol)
+        # # else:
+        # transaction_type = "Sold"
+        # db.execute("INSERT INTO transactions (user_id, symbol, shares, price,transaction_type, date) VALUES (?, ?, - ?, ?, ?, ?)", user_id, symbol, shares, shares_price,transaction_type, date)
+
+        # db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ? AND transaction_type = ?", new_shares, user_id, symbol,"Bought")
+
+        # # Update user's cash balance
+        # cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        # new_cash = cash + (total_shares * shares_price)
+        # print("new cash",new_cash)
+        # db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+
+
+        # # getting total of cash + shares prices
+        # total = db.execute("SELECT SUM(price*shares) as total_shares FROM transactions WHERE user_id =?",user_id)
+        # total_value_shares=total[0]['total_shares']
+        # total_values= new_cash + total_valu        
+        # transaction = db.execute("SELECT * FROM transactions WHERE user_id = ? AND transaction_type = ? AND shares > 0", user_id ,"Bought")
+e_shares
+

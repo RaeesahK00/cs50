@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h2>Sold!</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for transactions in transactions %}
+                <tr>
+                    <td>{{transactions.symbol}}</td>
+                    <td>{{transactions.shares}}</td>
+                    <td>{{transactions.price}}</td>
+                    <td>{{ (transactions.shares * transactions.price) | round(2)}}</td>
+
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Cash</th>
+                    <td>{{(cash_value_left) | round(2)}}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    <td>{{(total_value) | round(2)}}</td>
+                </tr>
+
+
+        </tbody>
+    </table>
+
+{% endblock %}
+

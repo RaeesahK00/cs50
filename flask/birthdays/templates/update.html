@@ -1,0 +1,14 @@
+<link href="/static/styles.css" rel="stylesheet">
+{% block body%}
+        <h1>Update</h1>
+        <div class="section">
+            <form action="/update" method="post">
+                <input name="id" type="hidden"  value="{{birthday.id}}">
+                <input name="name" type="text" placeholder="Name" autofocus autocomplete="off" value="{{birthday.name}}">
+                <input name="month" type="number" placeholder="Month" min="1" max="12">
+                <input name="day" type="number" placeholder="Day" min="1" max="31">
+                <input type="submit" value="Update">
+            </form>
+        </div>
+{% endblock %}
+

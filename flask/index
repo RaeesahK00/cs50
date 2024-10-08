@@ -1,0 +1,60 @@
+# Query database for user's stocks and cash balance
+stocks = db.execute("SELECT symbol, shares FROM portfolio WHERE user_id = ?", user_id)
+cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+# Initialize total value
+total_value = 0
+
+# List to hold stock data
+stock_data = []
+
+# Loop through each stock
+for stock in stocks:
+    # Get current price using lookup
+    stock_info = lookup(stock["symbol"])
+    current_price = stock_info["price"]
+    total = stock["shares"] * current_price
+    total_value += total
+    
+    # Append stock data to list
+    stock_data.append({
+        "symbol": stock["symbol"],
+        "shares": stock["shares"],
+        "price": current_price,
+        "total": total
+    })
+
+# Calculate grand total
+grand_total = total_value + cash
+
+# Render template with stock data, cash, and grand total
+return render_template("index.html", stocks=stock_data, cash=cash, grand_total=grand_total)
+In your HTML template, you can loop through stocks to display the data in a table and show the cash balance and grand total.
+
+Does this outline help you get started?
+
+    # user_id = session["user_id"][0]["id"]
+    # stocks = db.execute("SELECT symbol, shares FROM portfolio WHERE user_id = ?", user_id)
+    # cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+    # stock_data = []
+    # for stock in stocks:
+    #     stock_info = lookup(stock["symbol"])
+    #     current_price = stock_info["price"]
+    #     total = stock["shares"] * current_price
+    #     total_value += total
+
+    #     stock_data.append({
+    #         "symbol": stock["symbol"],
+    #         "shares": stock["shares"],
+    #         "price": current_price,
+    #         "total": total
+    #     })
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function multipleChoice(event)
+            {
+                let button = event.target;
+
+                if(button.innerHTML == 'HyperText Markup Language')
+                {
+                    button.style.backgroundColor = 'green';
+                    document.querySelector('#outputTextQ1').textContent = 'Correct!';
+                }else
+                {
+                    button.style.backgroundColor = 'red';
+                    document.querySelector('#outputTextQ1').textContent = 'Incorrect';
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelector('#question2').addEventListener('click', function() {
+
+                let userInput = document.querySelector('#inputText').value;
+                if (userInput === '<title>') {
+                    document.querySelector('#inputText').classList.add('correct');
+                    document.querySelector('#question2').classList.add('correctBtn');
+                    document.querySelector('#outputTextQ2').textContent = 'Correct!';
+                } else {
+                    document.querySelector('#inputText').classList.add('incorrectInput');
+                    document.querySelector('#question2').classList.add('incorrectBtn');
+                    document.querySelector('#outputTextQ2').textContent = 'Incorrect';
+                }
+
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>What does HTML stand for?</h3>
+                <button onclick="multipleChoice(event)">HighText Machine Language</button>
+                <button onclick="multipleChoice(event)">HyperText and links Markup Language</button>
+                <button onclick="multipleChoice(event)">HyperText Markup Language</button>
+                <button onclick="multipleChoice(event)">None of these</button>
+                <h4 id= "outputTextQ1"></h4>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What tag do you define to create a title for your tab?</h3>
+                <input id= "inputText" autocomplete = "off" type="text">
+                <button id= "question2">Check answer</button>
+                <h4 id= "outputTextQ2"></h4>
+
+            </div>
+        </div>
+    </body>
+</html>

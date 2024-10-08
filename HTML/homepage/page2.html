@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Hobbies</title>
+
+
+    </head>
+
+    <body>
+        <div class="navLinks">
+            <a class="nav" href="index.html" target="_parent">Homepage</a>
+            <a class="nav" href="page3.html" target="_parent">Interests</a>
+            <a class="nav" href="page4.html" target="_parent">Gallery</a>
+        </div>
+        <div class="headerHobbies">
+            <h1><b>My Hobbies</b></h1>
+        </div>
+        <div class="section">
+            <h2 style="color:slateBlue"><i>Hiking/Outdoor Activities 🚶‍♀️</i></h2>
+            <p>
+                Traveling and hiking are my relaxing escapes,
+                allowing me to immerse myself in the beauty of nature.
+                There’s something so exciting about stepping onto a hiking trail, surrounded by tall trees and the chorus of chirping birds.
+                Even though it can be tiring sometimes the moment that I reach the destiniation, breathing in the fresh mountain air and soaking in breathtaking views that remind me of the world’s beauty.
+                Each hike is a new adventure, filled with discoveries—whether it's spotting wildlife or uncovering hidden beaches.
+                <a class="galleryLink" href="page4.html">Want a sneak peak into my gallery.... &#128073; Click here</a>
+            </p>
+        </div>
+        <div class="section">
+            <img src="pictures/hiking1.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/hiking6.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/hiking5.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/hiking2.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/hiking7.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+
+        </div>
+
+        <div class="section">
+            <h2 style="color:slateBlue"><i>Swimming &#127946;</i></h2>
+            <p>
+                Swimming is another one of my favorite hobbies.
+                There’s nothing quite like the feeling of cool water surrounding me after a long summer day; it’s refreshing and relaxing.
+                My dad, being an onshore fisherman, has taken me to countless beaches, each with its own unique charm.
+                We often explore hidden coves and rocky shores.
+                Each beach adventure not only strengthens my love for swimming but also creates lasting memories with my family, whether we’re casting a line or simply relaxing by the shore.
+
+            </p>
+        </div>
+        <div class="section">
+            <img src="pictures/beach1.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/beach.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/beach3.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/beach4.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/beach5.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+        </div>
+
+        <div class="section">
+            <h2 style="color:slateBlue"><i>Going on Adventures 🚣‍♀️ </i></h2>
+            <p>
+                My family and I are always up for new adventures, and one of our most unforgettable experiences was ziplining over the ocean.
+                As the last one to take the leap,
+                I stood on the lookout platform, feeling the sea breeze on my face and my nerves bubbling up inside me.
+                When I finally zipped across, it was an exhilarating thrill like no other.
+                Another memorable adventure was kayaking down Storms River.
+                It was my first time kayaking, and doing it in the open sea added to the excitement.
+                Overall, both experiences were truly unforgettable!
+            </p>
+        </div>
+        <div class="section">
+            <img src="pictures/boat1.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/boat2.JPG" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/zipline.jpg" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+            <img src="pictures/boat3.JPG" class="resized-image" style="float: middle;" alt="This image could not be loaded">
+
+        </div>
+
+
+
+        </br>
+        <button onclick="topFunction()" id="scrollBtn" title="Go to top">Back to the top</button>
+
+        <script>
+            let mybutton = document.getElementById("scrollBtn");
+
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+
+    </body>
+
+    <footer>
+        <h4>&copy; 2024 Raeesah Khan | Always remember to smile &#128522; </h4>
+
+    </footer>
+
+</html>

@@ -1,0 +1,22 @@
+10 HTML tags:
+1) <link>
+2) <a>
+3) <div>
+4) <h2>
+5) <i>
+6) <p>
+7) <img>
+8) <ul>
+9) <footer>
+10) <script>
+
+5 CSS properties:
+1) text-align
+2) background
+3) padding
+4) font-size
+5) font-family
+
+How I am using Javascript and Bootstrap:
+I have used javascript to create the functionality of a button that takes the user all the way back to the top of the current page.
+The bootstrap is used to make the html pages responsive allowing it to adjust to any screen size.
